@@ -1,11 +1,4 @@
-![Logo of the project](https://raw.githubusercontent.com/gpietro/react-numpad/master/logo.png)
-
 # React numpad
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/gpietro/react-numpad.svg)](https://greenkeeper.io/)
-[![BCH compliance](https://bettercodehub.com/edge/badge/gpietro/react-numpad?branch=master)](https://bettercodehub.com/)
-[![npm version](https://badge.fury.io/js/react-numpad.svg)](https://badge.fury.io/js/react-numpad)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 
 A numpad for number, date and time, built with and for React.
 It's written with the extensibility in mind. The idea of this project is to cover the majority of input types in a form.
@@ -15,13 +8,13 @@ It's written with the extensibility in mind. The idea of this project is to cove
 To use React-Numpad, install it from NPM and include it in your own React build process (using Webpack, etc).
 
 ```shell
-npm install --save react-numpad
+npm install --save react-numpad-material
 ```
 
-At this point you can import react-numpad in your application
+At this point you can import react-numpad-material in your application
 
 ```shell
-import NumPad from 'react-numpad';
+import NumPad from 'react-numpad-material';
 ```
 
 ## Usage
@@ -37,6 +30,17 @@ Input field for numeric value. There are also **PositiveNumber**, **IntegerNumbe
 
 ```shell
 <NumPad.Number
+    onChange={(value) => { console.log('value', value)}}
+    label={'Total'}
+    placeholder={'my placeholder'}
+    value={100}
+/>
+```
+
+Beauty style with control
+
+```shell
+<NumPad.Rooney
     onChange={(value) => { console.log('value', value)}}
     label={'Total'}
     placeholder={'my placeholder'}
@@ -219,8 +223,8 @@ Live demo: [gpietro.github.io/docs](https://gpietro.github.io/docs)
 ## Developing
 
 ```shell
-git clone git@github.com:gpietro/react-numpad.git
-cd react-numpad/
+git clone git@github.com:hungnt167/react-numpad-material.git
+cd react-numpad-material/
 npm install
 npm start
 npm run storybook
@@ -241,8 +245,8 @@ A bundle will be created in the dist directory.
 If you'd like to contribute, please fork the repository and use a feature
 branch. Pull requests are warmly welcome.
 
-See our [CONTRIBUTING.md](https://github.com/gpietro/react-numpad/blob/master/CONTRIBUTING.md) for information on how to contribute.
+See our [CONTRIBUTING.md](https://github.com/hungnt167/react-numpad-material/blob/master/CONTRIBUTING.md) for information on how to contribute.
 
 ## License
 
-MIT Licensed. Copyright (c) Pietro Ghezzi 2017.
+MIT Licensed. Copyright (c) Rooney 2018.
