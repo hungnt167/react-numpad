@@ -141,6 +141,25 @@ const appointmentDates = {
 };
 
 storiesOf('NumPad', module)
+  .add('Rooney', () => [
+    <div key="story-1" style={{ marginBottom: '400px' }}>
+      <NumPad.Rooney
+        style={{ fontSize: '10px' }}
+        key="number-1"
+        placeholder=""
+        theme="orange"
+        onChange={value => {
+          console.log('value', value);
+        }}
+        label="Beauty"
+        isDecimal
+        sync
+        position="endTopRight"
+      >
+        <input type="text" placeholder="" />
+      </NumPad.Rooney>
+    </div>,
+  ])
   .add('Input number', () => [
     <div key="story-1" style={{ marginBottom: '400px' }}>
       <p>daédlfkja adf acfadsf asdélfk ajsdaf sodalesasdf asf asdf af </p>
