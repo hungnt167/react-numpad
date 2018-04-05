@@ -142,22 +142,283 @@ const appointmentDates = {
 
 storiesOf('NumPad', module)
   .add('Rooney', () => [
-    <div key="story-1" style={{ marginBottom: '400px' }}>
-      <NumPad.Rooney
-        style={{ fontSize: '10px' }}
-        key="number-1"
-        placeholder=""
-        theme="orange"
-        onChange={value => {
-          console.log('value', value);
-        }}
-        label="Beauty"
-        isDecimal
-        sync
-        position="endTopRight"
-      >
-        <input type="text" placeholder="" />
-      </NumPad.Rooney>
+    <div key="story-1" style={{ marginBottom: '0' }}>
+      <ul style={{ height: '100px', padding: 0 }}>
+        <li>
+          <NumPad.Rooney
+            style={{ fontSize: '10px' }}
+            key="number-1"
+            placeholder=""
+            theme="orange"
+            onChange={value => {
+              console.log('value', value);
+            }}
+            label="Beauty"
+            sync
+            isDecimal
+            position="endBottomLeft"
+          >
+            <input type="text" placeholder="" />
+          </NumPad.Rooney>
+        </li>
+        <li>
+          <NumPad.Rooney
+            style={{ fontSize: '10px' }}
+            key="number-1"
+            placeholder=""
+            theme="orange"
+            onChange={value => {
+              console.log('value', value);
+            }}
+            label="Beauty"
+            sync
+            position="endBottomLeft"
+          >
+            <input type="text" placeholder="" />
+          </NumPad.Rooney>
+        </li>
+        <li>
+          <NumPad.Rooney
+            style={{ fontSize: '10px' }}
+            key="number-1"
+            placeholder=""
+            theme="orange"
+            onChange={value => {
+              console.log('value', value);
+            }}
+            label="Beauty"
+            sync
+            position="startTopRight"
+          >
+            <input type="text" placeholder="" />
+          </NumPad.Rooney>
+        </li>
+        <li>
+          <NumPad.Rooney
+            style={{ fontSize: '10px' }}
+            key="number-1"
+            placeholder=""
+            theme="orange"
+            onChange={value => {
+              console.log('value', value);
+            }}
+            label="Beauty"
+            sync
+            position="endTopRight"
+          >
+            <input type="text" placeholder="" />
+          </NumPad.Rooney>
+        </li>
+        <li>
+          <NumPad.Rooney
+            style={{ fontSize: '10px' }}
+            key="number-1"
+            placeholder=""
+            theme="orange"
+            onChange={value => {
+              console.log('value', value);
+            }}
+            label="Beauty"
+            sync
+            position="startTopRight"
+          >
+            <input type="text" placeholder="" />
+          </NumPad.Rooney>
+        </li>
+        <li>
+          <NumPad.Rooney
+            style={{ fontSize: '10px' }}
+            key="number-1"
+            placeholder=""
+            theme="orange"
+            onChange={value => {
+              console.log('value', value);
+            }}
+            label="Beauty"
+            sync
+            position="startTopRight"
+          >
+            <input type="text" placeholder="" />
+          </NumPad.Rooney>
+        </li>
+        <li>
+          <NumPad.Rooney
+            style={{ fontSize: '10px' }}
+            key="number-1"
+            placeholder=""
+            theme="orange"
+            onChange={value => {
+              console.log('value', value);
+            }}
+            label="Beauty"
+            sync
+            position="startTopRight"
+          >
+            <input type="text" placeholder="" />
+          </NumPad.Rooney>
+        </li>
+        <li>
+          <NumPad.Rooney
+            style={{ fontSize: '10px' }}
+            key="number-1"
+            placeholder=""
+            theme="orange"
+            onChange={value => {
+              console.log('value', value);
+            }}
+            label="Beauty"
+            sync
+            position="startTopRight"
+          >
+            <input type="text" placeholder="" />
+          </NumPad.Rooney>
+        </li>
+        <li>
+          <NumPad.Rooney
+            style={{ fontSize: '10px' }}
+            key="number-1"
+            placeholder=""
+            theme="orange"
+            onChange={value => {
+              console.log('value', value);
+            }}
+            label="Beauty"
+            sync
+            position="startTopRight"
+          >
+            <input type="text" placeholder="" />
+          </NumPad.Rooney>
+        </li>
+        <li>
+          <NumPad.Rooney
+            style={{ fontSize: '10px' }}
+            key="number-1"
+            placeholder=""
+            theme="orange"
+            onChange={value => {
+              console.log('value', value);
+            }}
+            label="Beauty"
+            sync
+            position="startTopRight"
+          >
+            <input type="text" placeholder="" />
+          </NumPad.Rooney>
+        </li>
+        <li>
+          <NumPad.Rooney
+            style={{ fontSize: '10px' }}
+            key="number-1"
+            placeholder=""
+            theme="orange"
+            onChange={value => {
+              console.log('value', value);
+            }}
+            label="Beauty"
+            sync
+            position="startTopRight"
+          >
+            <input type="text" placeholder="" />
+          </NumPad.Rooney>
+        </li>
+        <li>
+          <NumPad.Rooney
+            style={{ fontSize: '10px' }}
+            key="number-1"
+            placeholder=""
+            theme="orange"
+            onChange={value => {
+              console.log('value', value);
+            }}
+            label="Beauty"
+            sync
+            position="startTopRight"
+          >
+            <input type="text" placeholder="" />
+          </NumPad.Rooney>
+        </li>
+        <li>
+          <NumPad.Rooney
+            style={{ fontSize: '10px' }}
+            key="number-1"
+            placeholder=""
+            theme="orange"
+            onChange={value => {
+              console.log('value', value);
+            }}
+            label="Beauty"
+            sync
+            position="startTopRight"
+          >
+            <input type="text" placeholder="" />
+          </NumPad.Rooney>
+        </li>
+        <li>
+          <NumPad.Rooney
+            style={{ fontSize: '10px' }}
+            key="number-1"
+            placeholder=""
+            theme="orange"
+            onChange={value => {
+              console.log('value', value);
+            }}
+            label="Beauty"
+            sync
+            position="startTopRight"
+          >
+            <input type="text" placeholder="" />
+          </NumPad.Rooney>
+        </li>
+        <li>
+          <NumPad.Rooney
+            style={{ fontSize: '10px' }}
+            key="number-1"
+            placeholder=""
+            theme="orange"
+            onChange={value => {
+              console.log('value', value);
+            }}
+            label="Beauty"
+            sync
+            position="startTopRight"
+          >
+            <input type="text" placeholder="" />
+          </NumPad.Rooney>
+        </li>
+        <li>
+          <NumPad.Rooney
+            style={{ fontSize: '10px' }}
+            key="number-1"
+            placeholder=""
+            theme="orange"
+            onChange={value => {
+              console.log('value', value);
+            }}
+            label="Beauty"
+            sync
+            position="startTopRight"
+          >
+            <input type="text" placeholder="" />
+          </NumPad.Rooney>
+        </li>
+        <li>
+          <NumPad.Rooney
+            style={{ fontSize: '10px' }}
+            key="number-1"
+            placeholder=""
+            theme="orange"
+            onChange={value => {
+              console.log('value', value);
+            }}
+            label="Beauty"
+            sync
+            position="startTopRight"
+          >
+            <input type="text" placeholder="" />
+          </NumPad.Rooney>
+        </li>
+      </ul>
+      <br />
     </div>,
   ])
   .add('Input number', () => [
@@ -174,7 +435,7 @@ storiesOf('NumPad', module)
           }}
           position="startBottomLeft"
           label="Totale"
-          sync={true}
+          sync
         >
           <input type="text" placeholder="test" />
           <Button />
@@ -222,13 +483,13 @@ storiesOf('NumPad', module)
       placeholder="HH:mm"
       label="Sveglia"
       onChange={value => console.log('changed', value)}
-      sync={true}
-      value={'12:33'}
+      sync
+      value="12:33"
     />,
     <NumPad.Time
       key="time-2"
       theme="blackAndWhite"
-      sync={true}
+      sync
       onChange={value => console.log('changed', value)}
     />,
     <LoremIpsum key="lorem" />,
@@ -240,7 +501,7 @@ storiesOf('NumPad', module)
       dateFormat="DD.MM.YYYY"
       label="Data di nascita"
       onChange={value => console.log('changed', value)}
-      value={'28.06.1986'}
+      value="28.06.1986"
     />,
     <LoremIpsum key="lorem" />,
   ])
@@ -254,7 +515,7 @@ storiesOf('NumPad', module)
       key="date-2"
       dateFormat="DD.MM.YYYY"
       onChange={value => console.log('changed', value)}
-      value={'28.06.1986 10:00'}
+      value="28.06.1986 10:00"
     />,
     <LoremIpsum key="lorem" />,
   ])
@@ -279,7 +540,7 @@ storiesOf('NumPad', module)
         onChange={value => {
           console.log('value', value);
         }}
-        sync={true}
+        sync
         label="Restilizzato"
       >
         <input type="text" />
@@ -292,12 +553,12 @@ storiesOf('Calendar', module)
     <NumPad.Calendar
       key="numpad-date"
       onChange={value => console.log('changed', value)}
-      label={'Birthdate'}
+      label="Birthdate"
       locale="en"
       dateFormat="MM/DD/YYYY"
       position="startBottomLeft"
-      minDate={'01/20/2018'}
-      maxDate={'01/30/2018'}
+      minDate="01/20/2018"
+      maxDate="01/30/2018"
     >
       <input type="text" style={{ boder: '2px solid red', width: '300px' }} />
     </NumPad.Calendar>,
@@ -306,28 +567,28 @@ storiesOf('Calendar', module)
   .add('Date CH-IT', () => (
     <NumPad.Calendar
       label="data in italiano"
-      dateFormat={'DD.MM.YYYY'}
+      dateFormat="DD.MM.YYYY"
       position="fullscreen"
-      locale={'it'}
+      locale="it"
       onChange={value => console.log('value', value)}
     />
   ))
   .add('Events', () => (
     <NumPad.Appointment
-      dateFormat={'DD.MM.YYYY'}
+      dateFormat="DD.MM.YYYY"
       dates={appointmentDates}
-      locale={'it'}
-      value={'20.04.2018 10:00'}
-      position={'startBottomLeft'}
+      locale="it"
+      value="20.04.2018 10:00"
+      position="startBottomLeft"
       onChange={value => console.log('value', value)}
     />
   ))
   .add('Events fullscreen', () => (
     <NumPad.Appointment
-      dateFormat={'DD.MM.YYYY'}
-      position={'fullscreen'}
+      dateFormat="DD.MM.YYYY"
+      position="fullscreen"
       dates={appointmentDates}
-      locale={'it'}
+      locale="it"
       onChange={value => console.log('value', value)}
     />
   ))
@@ -358,15 +619,15 @@ storiesOf('Calendar', module)
       <hr />
       <NumPad.Calendar
         onChange={value => console.log('changed', value)}
-        label={'Data di nascita'}
+        label="Data di nascita"
         locale="it"
         dateFormat="DD.MM.YYYY"
-        value={'28.06.1986'}
+        value="28.06.1986"
       />
       <hr />
       <NumPad.Calendar
         onChange={value => console.log('changed', value)}
-        label={'Markers'}
+        label="Markers"
         locale="it"
         dateFormat="DD.MM.YYYY"
         markers={['01.03.2018', '06.03.2018']}
