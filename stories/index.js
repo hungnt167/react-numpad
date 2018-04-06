@@ -141,11 +141,155 @@ const appointmentDates = {
 };
 
 storiesOf('NumPad', module)
+  .add('Popover', () => [
+    <div key="story-999" style={{ marginTop: '100px' }}>
+      <ul style={{ height: '100px', width: '200px', padding: 0 }}>
+        <NumPad.Popover
+          style={{ fontSize: '10px' }}
+          key="number-1"
+          placeholder=""
+          theme="orange"
+          onChange={value => {
+            console.log('value', value);
+          }}
+          label="Beauty"
+          sync
+          position="centerRight"
+          arrow="left"
+        >
+          <li>
+            <input type="text" placeholder="" />
+          </li>
+        </NumPad.Popover>
+        <NumPad.Popover
+          style={{ fontSize: '10px' }}
+          key="number-1"
+          placeholder=""
+          theme="orange"
+          onChange={value => {
+            console.log('value', value);
+          }}
+          label="Beauty"
+          sync
+          isDecimal
+          position="centerRight"
+        >
+          <li>
+            <input type="text" placeholder="" />
+          </li>
+        </NumPad.Popover>
+        <NumPad.Popover
+          style={{ fontSize: '10px' }}
+          key="number-1"
+          placeholder=""
+          theme="orange"
+          onChange={value => {
+            console.log('value', value);
+          }}
+          label="Beauty"
+          sync
+          isDecimal
+          position="centerRight"
+        >
+          <li>
+            <input type="text" placeholder="" />
+          </li>
+        </NumPad.Popover>
+        <NumPad.Popover
+          style={{ fontSize: '10px' }}
+          key="number-1"
+          placeholder=""
+          theme="orange"
+          onChange={value => {
+            console.log('value', value);
+          }}
+          label="Beauty"
+          sync
+          isDecimal
+          position="centerRight"
+        >
+          <li>
+            <input type="text" placeholder="" />
+          </li>
+        </NumPad.Popover>
+        <NumPad.Popover
+          style={{ fontSize: '10px' }}
+          key="number-1"
+          placeholder=""
+          theme="orange"
+          onChange={value => {
+            console.log('value', value);
+          }}
+          label="Beauty"
+          sync
+          isDecimal
+          position="centerRight"
+        >
+          <li>
+            <input type="text" placeholder="" />
+          </li>
+        </NumPad.Popover>
+        <NumPad.Popover
+          style={{ fontSize: '10px' }}
+          key="number-1"
+          placeholder=""
+          theme="orange"
+          onChange={value => {
+            console.log('value', value);
+          }}
+          label="Beauty"
+          sync
+          isDecimal
+          position="centerRight"
+        >
+          <li>
+            <input type="text" placeholder="" />
+          </li>
+        </NumPad.Popover>
+        <NumPad.Popover
+          style={{ fontSize: '10px' }}
+          key="number-1"
+          placeholder=""
+          theme="orange"
+          onChange={value => {
+            console.log('value', value);
+          }}
+          label="Beauty"
+          sync
+          isDecimal
+          position="centerRight"
+        >
+          <li>
+            <input type="text" placeholder="" />
+          </li>
+        </NumPad.Popover>
+        <NumPad.Popover
+          style={{ fontSize: '10px' }}
+          key="number-1"
+          placeholder=""
+          theme="orange"
+          onChange={value => {
+            console.log('value', value);
+          }}
+          label="Beauty"
+          sync
+          isDecimal
+          position="centerRight"
+          arrow={'left'}
+        >
+          <li>
+            <input type="text" placeholder="" />
+          </li>
+        </NumPad.Popover>
+      </ul>
+      <br />
+    </div>,
+  ])
   .add('Rooney', () => [
-    <div key="story-1" style={{ marginBottom: '0' }}>
+    <div key="story-998" style={{ marginBottom: '0' }}>
       <ul style={{ height: '100px', padding: 0 }}>
         <li>
-          <NumPad.Rooney
+          <NumPad.RooneyInteger
             style={{ fontSize: '10px' }}
             key="number-1"
             placeholder=""
@@ -156,13 +300,13 @@ storiesOf('NumPad', module)
             label="Beauty"
             sync
             isDecimal
-            position="endBottomLeft"
+            position="endBottomRight"
           >
             <input type="text" placeholder="" />
-          </NumPad.Rooney>
+          </NumPad.RooneyInteger>
         </li>
         <li>
-          <NumPad.Rooney
+          <NumPad.RooneyInteger
             style={{ fontSize: '10px' }}
             key="number-1"
             placeholder=""
@@ -172,13 +316,13 @@ storiesOf('NumPad', module)
             }}
             label="Beauty"
             sync
-            position="endBottomLeft"
+            position="endBottomRight"
           >
             <input type="text" placeholder="" />
-          </NumPad.Rooney>
+          </NumPad.RooneyInteger>
         </li>
         <li>
-          <NumPad.Rooney
+          <NumPad.RooneyInteger
             style={{ fontSize: '10px' }}
             key="number-1"
             placeholder=""
@@ -188,13 +332,13 @@ storiesOf('NumPad', module)
             }}
             label="Beauty"
             sync
-            position="startTopRight"
+            position="endBottomRight"
           >
             <input type="text" placeholder="" />
-          </NumPad.Rooney>
+          </NumPad.RooneyInteger>
         </li>
         <li>
-          <NumPad.Rooney
+          <NumPad.RooneyInteger
             style={{ fontSize: '10px' }}
             key="number-1"
             placeholder=""
@@ -204,13 +348,13 @@ storiesOf('NumPad', module)
             }}
             label="Beauty"
             sync
-            position="endTopRight"
+            position="endBottomRight"
           >
             <input type="text" placeholder="" />
-          </NumPad.Rooney>
+          </NumPad.RooneyInteger>
         </li>
         <li>
-          <NumPad.Rooney
+          <NumPad.RooneyInteger
             style={{ fontSize: '10px' }}
             key="number-1"
             placeholder=""
@@ -220,13 +364,13 @@ storiesOf('NumPad', module)
             }}
             label="Beauty"
             sync
-            position="startTopRight"
+            position="endBottomRight"
           >
             <input type="text" placeholder="" />
-          </NumPad.Rooney>
+          </NumPad.RooneyInteger>
         </li>
         <li>
-          <NumPad.Rooney
+          <NumPad.RooneyInteger
             style={{ fontSize: '10px' }}
             key="number-1"
             placeholder=""
@@ -236,13 +380,13 @@ storiesOf('NumPad', module)
             }}
             label="Beauty"
             sync
-            position="startTopRight"
+            position="endBottomRight"
           >
             <input type="text" placeholder="" />
-          </NumPad.Rooney>
+          </NumPad.RooneyInteger>
         </li>
         <li>
-          <NumPad.Rooney
+          <NumPad.RooneyInteger
             style={{ fontSize: '10px' }}
             key="number-1"
             placeholder=""
@@ -252,13 +396,13 @@ storiesOf('NumPad', module)
             }}
             label="Beauty"
             sync
-            position="startTopRight"
+            position="endBottomRight"
           >
             <input type="text" placeholder="" />
-          </NumPad.Rooney>
+          </NumPad.RooneyInteger>
         </li>
         <li>
-          <NumPad.Rooney
+          <NumPad.RooneyInteger
             style={{ fontSize: '10px' }}
             key="number-1"
             placeholder=""
@@ -268,13 +412,13 @@ storiesOf('NumPad', module)
             }}
             label="Beauty"
             sync
-            position="startTopRight"
+            position="endBottomRight"
           >
             <input type="text" placeholder="" />
-          </NumPad.Rooney>
+          </NumPad.RooneyInteger>
         </li>
         <li>
-          <NumPad.Rooney
+          <NumPad.RooneyInteger
             style={{ fontSize: '10px' }}
             key="number-1"
             placeholder=""
@@ -284,13 +428,13 @@ storiesOf('NumPad', module)
             }}
             label="Beauty"
             sync
-            position="startTopRight"
+            position="endBottomRight"
           >
             <input type="text" placeholder="" />
-          </NumPad.Rooney>
+          </NumPad.RooneyInteger>
         </li>
         <li>
-          <NumPad.Rooney
+          <NumPad.RooneyInteger
             style={{ fontSize: '10px' }}
             key="number-1"
             placeholder=""
@@ -300,13 +444,13 @@ storiesOf('NumPad', module)
             }}
             label="Beauty"
             sync
-            position="startTopRight"
+            position="endBottomRight"
           >
             <input type="text" placeholder="" />
-          </NumPad.Rooney>
+          </NumPad.RooneyInteger>
         </li>
         <li>
-          <NumPad.Rooney
+          <NumPad.RooneyInteger
             style={{ fontSize: '10px' }}
             key="number-1"
             placeholder=""
@@ -316,13 +460,13 @@ storiesOf('NumPad', module)
             }}
             label="Beauty"
             sync
-            position="startTopRight"
+            position="endBottomRight"
           >
             <input type="text" placeholder="" />
-          </NumPad.Rooney>
+          </NumPad.RooneyInteger>
         </li>
         <li>
-          <NumPad.Rooney
+          <NumPad.RooneyInteger
             style={{ fontSize: '10px' }}
             key="number-1"
             placeholder=""
@@ -332,13 +476,13 @@ storiesOf('NumPad', module)
             }}
             label="Beauty"
             sync
-            position="startTopRight"
+            position="endBottomRight"
           >
             <input type="text" placeholder="" />
-          </NumPad.Rooney>
+          </NumPad.RooneyInteger>
         </li>
         <li>
-          <NumPad.Rooney
+          <NumPad.RooneyInteger
             style={{ fontSize: '10px' }}
             key="number-1"
             placeholder=""
@@ -348,13 +492,13 @@ storiesOf('NumPad', module)
             }}
             label="Beauty"
             sync
-            position="startTopRight"
+            position="endBottomRight"
           >
             <input type="text" placeholder="" />
-          </NumPad.Rooney>
+          </NumPad.RooneyInteger>
         </li>
         <li>
-          <NumPad.Rooney
+          <NumPad.RooneyInteger
             style={{ fontSize: '10px' }}
             key="number-1"
             placeholder=""
@@ -364,13 +508,13 @@ storiesOf('NumPad', module)
             }}
             label="Beauty"
             sync
-            position="startTopRight"
+            position="endBottomRight"
           >
             <input type="text" placeholder="" />
-          </NumPad.Rooney>
+          </NumPad.RooneyInteger>
         </li>
         <li>
-          <NumPad.Rooney
+          <NumPad.RooneyInteger
             style={{ fontSize: '10px' }}
             key="number-1"
             placeholder=""
@@ -380,13 +524,13 @@ storiesOf('NumPad', module)
             }}
             label="Beauty"
             sync
-            position="startTopRight"
+            position="endBottomRight"
           >
             <input type="text" placeholder="" />
-          </NumPad.Rooney>
+          </NumPad.RooneyInteger>
         </li>
         <li>
-          <NumPad.Rooney
+          <NumPad.RooneyInteger
             style={{ fontSize: '10px' }}
             key="number-1"
             placeholder=""
@@ -396,13 +540,13 @@ storiesOf('NumPad', module)
             }}
             label="Beauty"
             sync
-            position="startTopRight"
+            position="endBottomRight"
           >
             <input type="text" placeholder="" />
-          </NumPad.Rooney>
+          </NumPad.RooneyInteger>
         </li>
         <li>
-          <NumPad.Rooney
+          <NumPad.RooneyInteger
             style={{ fontSize: '10px' }}
             key="number-1"
             placeholder=""
@@ -412,10 +556,10 @@ storiesOf('NumPad', module)
             }}
             label="Beauty"
             sync
-            position="startTopRight"
+            position="endBottomRight"
           >
             <input type="text" placeholder="" />
-          </NumPad.Rooney>
+          </NumPad.RooneyInteger>
         </li>
       </ul>
       <br />
@@ -457,7 +601,7 @@ storiesOf('NumPad', module)
       onChange={value => {
         console.log('value', value);
       }}
-      position="startTopRight"
+      position="endBottomRight"
       label="Positive"
     />,
     <NumPad.IntegerNumber
