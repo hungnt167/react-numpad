@@ -159,6 +159,8 @@ storiesOf('NumPad', module)
           qtyIncrement={5}
           isDecimal
           decimalSeparator=","
+          max={10}
+          min={5}
         >
           <li>
             <input type="text" placeholder="" />
