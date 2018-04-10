@@ -1,6 +1,6 @@
 {
   "name": "react-numpad-material",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Thank for Pietro Ghezzi, Numpad react component, as number input or time input",
   "main": "build/index.js",
   "repository": {
