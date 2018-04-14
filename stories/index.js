@@ -156,11 +156,12 @@ storiesOf('NumPad', module)
           sync
           position="centerRight"
           arrow="left"
-          qtyIncrement={5}
+          qtyIncrement={2.5}
           isDecimal
-          decimalSeparator=","
-          max={10}
+          decimalSeparator="."
+          max={30}
           min={5}
+          value={5}
         >
           <li>
             <input type="text" placeholder="" />
