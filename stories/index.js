@@ -160,7 +160,7 @@ storiesOf('NumPad', module)
           isDecimal
           decimalSeparator="."
           max={30}
-          min={5}
+          min={0}
           value={5}
         >
           <li>
@@ -177,7 +177,6 @@ storiesOf('NumPad', module)
           }}
           label="Beauty"
           sync
-          isDecimal
           position="centerRight"
         >
           <li>
