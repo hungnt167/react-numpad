@@ -153,7 +153,6 @@ storiesOf('NumPad', module)
             console.log('value', value);
           }}
           label="Beauty"
-          sync
           position="centerRight"
           arrow="left"
           qtyIncrement={2.5}
