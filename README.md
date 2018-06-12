@@ -1,3 +1,5 @@
+![Screenshot](https://raw.githubusercontent.com/hungnt167/react-numpad/master/screenshot.png)
+
 # React numpad
 
 A numpad for number, date and time, built with and for React.
@@ -8,10 +10,10 @@ It's written with the extensibility in mind. The idea of this project is to cove
 To use React-Numpad, install it from NPM and include it in your own React build process (using Webpack, etc).
 
 ```shell
-npm install --save react-numpad-material
+npm i -S react-numpad-material
 ```
 
-At this point you can import react-numpad-material in your application
+At this point you can import react-numpad in your application
 
 ```shell
 import NumPad from 'react-numpad-material';
@@ -22,155 +24,49 @@ import NumPad from 'react-numpad-material';
 React-NumPad generates an input field containing the selected value, so you can submit it as part of a standard form. You can also listen for changes with the onChange event property.
 When the value is changed, onChange(selectedValue) will fire.
 
-React-NumPad is built based on a "main" component (NumPad.js). Following the higher-order component technique, is possible to create new components by simply overriding few common properties.
+React-NumPad is built based on a "main" component (PopoverNumPad.js). Following the higher-order component technique, is possible to create new components by simply overriding few common properties.
 
-### NumPad.Number
+### NumPad.Popover
 
 Input field for numeric value. There are also **PositiveNumber**, **IntegerNumber**, **PositiveIntegerNumber** components with the same properties.
 
 ```shell
-<NumPad.Number
-    onChange={(value) => { console.log('value', value)}}
-    label={'Total'}
-    placeholder={'my placeholder'}
-    value={100}
-/>
-```
-
-Beauty style with control
-
-```shell
-<NumPad.Rooney
-    onChange={(value) => { console.log('value', value)}}
-    label={'Total'}
-    placeholder={'my placeholder'}
-    value={100}
-/>
-```
-
-### NumPad.Time
-
-Input field with time format.
-
-```shell
-<NumPad.Time
-    onChange={(value) => { console.log('value', value)}}
-    label={'Departure time'}
-    placeholder={'my placeholder'}
-/>
-```
-
-### NumPad.Date
-
-Input field with date format.
-
-```shell
-<NumPad.Date
-    onChange={(value) => { console.log('value', value)}}
-    label={'Data di nascita di partenza'}
-/>
-```
-
-### NumPad.DateTime
-
-Input field with date and time format.
-
-```shell
-<NumPad.DateTime
-    onChange={(value) => { console.log('value', value)}}
-    dateFormat={'DD.MM.YYYY'}
-    label={'Data e ora di partenza'}
-    value={'10.02.2018 10:00'}
-/>
+<NumPad.Popover
+              onChange={value => {
+                  console.log('value', value);
+              }}
+              position="centerRight"
+              arrow="left"
+              qtyIncrement={2.5}
+              isDecimal
+              decimalSeparator="."
+              max={30}
+              min={0}
+              value={10}
+          >
+              <li>
+                  <input type="text" placeholder="" />
+              </li>
+</NumPad.Popover>
 ```
 
 ## NumPad Properties
 
-| Property      | Type                 | Default      | Description                                                                                                                        |
-| :------------ | :------------------- | :----------- | :--------------------------------------------------------------------------------------------------------------------------------- |
-| `onChange`    | `function`           | **required** | function called when value change and is valid.                                                                                    |
-| `placeholder` | `string`             | none         | text to display as input placeholder.                                                                                              |
-| `label`       | `string`             | none         | text to display as input label.                                                                                                    |
-| `position`    | `string`             | `flex-end`   | Position to the screen. `center`, `flex-start`, `flex-end`, `startBottomLeft`, `startBottomRight`, `startTopLeft`, `startTopRight` |
-| `theme`       | `string` or `object` | `numpad`     | string as the name of the theme or object as custom styles.                                                                        |
-| `dateFormat`  | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
-| `value`       | `string` or `number` | none         | value (default) for the input field.                                                                                               |
-| `sync`        | `boolean`            | false        | if true, callbacks calls while typing if the input is valid                                                                        |
-
-### NumPad.Calendar
-
-Calendar input field.
-
-```shell
-<NumPad.Calendar
-    onChange={value => console.log('changed', value)}
-    label='Data di nascita'
-    locale="it"
-    dateFormat="DD.MM.YYYY"
-    minDate="01.01.1900"
-    markers={['01.03.2018', '06.03.2018']}
-/>
-```
-
-## Calendar Properties
-
-| Property      | Type                 | Default      | Description                                                                                                                        |
-| :------------ | :------------------- | :----------- | :--------------------------------------------------------------------------------------------------------------------------------- |
-| `onChange`    | `function`           | **required** | function called when value change and is valid.                                                                                    |
-| `placeholder` | `string`             | none         | text to display as input placeholder.                                                                                              |
-| `label`       | `string`             | none         | text to display as input label.                                                                                                    |
-| `position`    | `string`             | `flex-end`   | Position to the screen. `center`, `flex-start`, `flex-end`, `startBottomLeft`, `startBottomRight`, `startTopLeft`, `startTopRight` |
-| `theme`       | `string` or `object` | `numpad`     | string as the name of the theme or object as custom styles.                                                                        |
-| `dateFormat`  | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
-| `value`       | `string` or `number` | none         | value (default) for the input field.                                                                                               |
-| `locale`      | `string`             | `en`         | locale for days and months                                                                                                         |
-| `weekOffset`  | `number`             | `0`          | First day of the week, by default is Sunday                                                                                        |
-| `markers`     | `array`              | []           | list of dates to place a marker on Calendar. The string date format must be the same as dateFormat property                        |
-| `minDate`     | `string`             | none         | min date for calendar input validation                                                                                             |
-| `maxDate`     | `string`             | none         | max date for calendar input validation                                                                                             |
-
-### NumPad.Appointment
-
-Available date time appointments picker.
-
-```shell
-<NumPad.Appointment
-    dateFormat={"DD.MM.YYYY"}
-    dates={appointmentDates}
-    locale={"it"}
-    onChange={value => console.log("value", value)}
-/>
-
-const appointmentDates = {
-    '01.04.2018': ['08:00', '09:00', '10:00', '11:00'],
-    '03.04.2018': ['08:00', '09:00', '10:00'],
-    '04.04.2018': ['08:00', '09:00', '10:00', '11:00', '17:00'],
-    '09.04.2018': ['08:00', '10:00', '11:00', '15:00']
-}
-```
-
-## Appointment Properties
-
 | Property           | Type                 | Default      | Description                                                                                                                        |
 | :----------------- | :------------------- | :----------- | :--------------------------------------------------------------------------------------------------------------------------------- |
 | `onChange`         | `function`           | **required** | function called when value change and is valid.                                                                                    |
-| `appointmentDates` | `object`             | **required** | object representing available dates with times                                                                                     |
-| `placeholder`      | `string`             | none         | text to display as input placeholder.                                                                                              |
-| `label`            | `string`             | none         | text to display as input label.                                                                                                    |
 | `position`         | `string`             | `flex-end`   | Position to the screen. `center`, `flex-start`, `flex-end`, `startBottomLeft`, `startBottomRight`, `startTopLeft`, `startTopRight` |
 | `theme`            | `string` or `object` | `numpad`     | string as the name of the theme or object as custom styles.                                                                        |
-| `dateFormat`       | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
-| `locale`           | `string`             | `en`         | locale for days and months                                                                                                         |
-
-## Custom input field
-
-It's possible to override the InputField component by passing your input field as child component of NumPad.
-
-```shell
-<NumPad.Number onChange={(value) => console.log('value', value)}>
-    <button>Click me!</button>
-</NumPad.Number>
-```
+| `value`            | `string` or `number` | none         | value (default) for the input field.                                                                                               |
+| `sync`             | `boolean`            | false        | if true, callbacks calls while typing if the input is valid                                                                        |
+| `min`              | `string`             | none         | min value for validation                                                                                                           |
+| `max`              | `string`             | none         | max value for validation                                                                                                           |
+| `arrow`            | `string`             | none         | show arrow `left` or `right`                                                                                                       |
+| `qtyIncrement`     | `number`             | none         | set quantity Increment                                                                                                             |
+| `isDecimal`        | `boolean`            | false        | show comma button for decimal number                                                                                               |
+| `decimalSeparator` | `string`             | `.`          | define decimal separator symbol for decimal number                                                                                 |
+| `max`              | `number`             | none         | maximum value, if type over, the change will be prevented                                                                          |
+| `min`              | `number`             | none         | minimum value, if type over, the change will be prevented                                                                          |
 
 ## Themes
 
@@ -218,13 +114,9 @@ On mobile is possible to switch between months by swipe.
 
 ## Demo / Examples
 
-Live demo: [gpietro.github.io/docs](https://gpietro.github.io/docs)
-
-## Developing
-
 ```shell
-git clone git@github.com:hungnt167/react-numpad-material.git
-cd react-numpad-material/
+git clone https://github.com/hungnt167/react-numpad
+cd react-numpad/
 npm install
 npm start
 npm run storybook
@@ -239,14 +131,3 @@ npm run build
 ```
 
 A bundle will be created in the dist directory.
-
-## Contribute
-
-If you'd like to contribute, please fork the repository and use a feature
-branch. Pull requests are warmly welcome.
-
-See our [CONTRIBUTING.md](https://github.com/hungnt167/react-numpad-material/blob/master/CONTRIBUTING.md) for information on how to contribute.
-
-## License
-
-MIT Licensed. Copyright (c) Rooney 2018.

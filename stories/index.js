@@ -304,7 +304,7 @@ storiesOf('NumPad', module)
             label="Beauty"
             sync
             isDecimal
-            position="endBottomRight"
+            position="startTopRight"
           >
             <input type="text" placeholder="" />
           </NumPad.RooneyInteger>
