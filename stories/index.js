@@ -142,6 +142,29 @@ const appointmentDates = {
 
 storiesOf('NumPad', module)
   .add('Popover', () => [
+    <div style={{ width: '100%', height: '600px' }}>
+      <div style={{ width: '50%', float: 'right', marginTop: '300px', padding: '30px' }}>
+        <NumPad.Popover
+          style={{ fontSize: '10px' }}
+          key="number-1-123123"
+          theme="orange"
+          onChange={value => {
+            console.log('value', value);
+          }}
+          position="centerLeft"
+          arrow="left"
+          terminalAlign="right"
+          isSimpleMode
+          max={300}
+          min={0}
+          value={0}
+        >
+          <div style={{ width: '200px' }}>
+            <input type="text" placeholder="" />
+          </div>
+        </NumPad.Popover>
+      </div>
+    </div>,
     <div key="story-999" style={{ marginTop: '100px' }}>
       <ul style={{ height: '100px', width: '200px', padding: 0 }}>
         <NumPad.Popover
@@ -154,7 +177,7 @@ storiesOf('NumPad', module)
           }}
           label="Beauty"
           position="centerRight"
-          arrow="left"
+          arrow="right"
           qtyIncrement={2.5}
           isDecimal
           decimalSeparator="."
@@ -279,7 +302,7 @@ storiesOf('NumPad', module)
           sync
           isDecimal
           position="centerRight"
-          arrow={'left'}
+          arrow="left"
         >
           <li>
             <input type="text" placeholder="" />

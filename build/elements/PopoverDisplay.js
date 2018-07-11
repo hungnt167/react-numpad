@@ -7,8 +7,9 @@ Object.defineProperty(exports, "__esModule", {
 var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  padding: 0;\n  align-items: center;\n  border: none;\n  background: white;\n  padding: 20px 20px 15px;\n  border-radius: 6px;\n'], ['\n  display: flex;\n  padding: 0;\n  align-items: center;\n  border: none;\n  background: white;\n  padding: 20px 20px 15px;\n  border-radius: 6px;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  background: none;\n  cursor: default;\n  border: none;\n  outline: none;\n  font-size: 1.6em;\n  padding: 0px 2px 0px 0px;\n  color: ', ';\n'], ['\n  background: none;\n  cursor: default;\n  border: none;\n  outline: none;\n  font-size: 1.6em;\n  padding: 0px 2px 0px 0px;\n  color: ', ';\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  &:read-only {\n    cursor: not-allowed;\n  }\n  border-radius: 0px;\n  cursor: default;\n  background: transparent;\n  font-size: 18px;\n  color: #1d63dc;\n  outline: none;\n  border: none;\n  width: 45%;\n  text-align: ', ';\n'], ['\n  &:read-only {\n    cursor: not-allowed;\n  }\n  border-radius: 0px;\n  cursor: default;\n  background: transparent;\n  font-size: 18px;\n  color: #1d63dc;\n  outline: none;\n  border: none;\n  width: 45%;\n  text-align: ', ';\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  flex-grow: 1;\n'], ['\n  flex-grow: 1;\n']),
-    _templateObject5 = _taggedTemplateLiteral(['\n  cursor: pointer;\n  outline: none;\n  background-color: #ededed;\n  width: 27%;\n  height: 60px;\n  line-height: 60px;\n  padding: 0;\n  border-radius: 10px;\n  font-size: 20px;\n  border: none;\n  &:hover ', ' {\n    text-decoration: none;\n    background-color: rgba(0, 0, 0, 0.12);\n  }\n'], ['\n  cursor: pointer;\n  outline: none;\n  background-color: #ededed;\n  width: 27%;\n  height: 60px;\n  line-height: 60px;\n  padding: 0;\n  border-radius: 10px;\n  font-size: 20px;\n  border: none;\n  &:hover ', ' {\n    text-decoration: none;\n    background-color: rgba(0, 0, 0, 0.12);\n  }\n']);
+    _templateObject4 = _taggedTemplateLiteral(['\n  &:read-only {\n    cursor: not-allowed;\n  }\n  height: 60px;\n  border-radius: 0;\n  cursor: default;\n  background: transparent;\n  width: 100%;\n  border: none;\n  font-size: 36px;\n  color: #1d1d1d;\n  outline: none;\n  text-align: ', ';\n'], ['\n  &:read-only {\n    cursor: not-allowed;\n  }\n  height: 60px;\n  border-radius: 0;\n  cursor: default;\n  background: transparent;\n  width: 100%;\n  border: none;\n  font-size: 36px;\n  color: #1d1d1d;\n  outline: none;\n  text-align: ', ';\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n  flex-grow: 1;\n'], ['\n  flex-grow: 1;\n']),
+    _templateObject6 = _taggedTemplateLiteral(['\n  cursor: pointer;\n  outline: none;\n  background-color: #ededed;\n  width: 27%;\n  height: 60px;\n  line-height: 60px;\n  padding: 0;\n  border-radius: 10px;\n  font-size: 20px;\n  border: none;\n  &:hover ', ' {\n    text-decoration: none;\n    background-color: rgba(0, 0, 0, 0.12);\n  }\n'], ['\n  cursor: pointer;\n  outline: none;\n  background-color: #ededed;\n  width: 27%;\n  height: 60px;\n  line-height: 60px;\n  padding: 0;\n  border-radius: 10px;\n  font-size: 20px;\n  border: none;\n  &:hover ', ' {\n    text-decoration: none;\n    background-color: rgba(0, 0, 0, 0.12);\n  }\n']);
 
 var _react = require('react');
 
@@ -39,9 +40,14 @@ var Backspace = _styledComponents2.default.button(_templateObject2, function (pr
 var Input = _styledComponents2.default.input(_templateObject3, function (props) {
   return props.terminalAlign;
 });
-var Display = _styledComponents2.default.div(_templateObject4);
 
-var Button = _styledComponents2.default.button(_templateObject5, undefined);
+var SimpleInput = _styledComponents2.default.input(_templateObject4, function (props) {
+  return props.terminalAlign;
+});
+
+var Display = _styledComponents2.default.div(_templateObject5);
+
+var Button = _styledComponents2.default.button(_templateObject6, undefined);
 
 var DisplayWrapper = function DisplayWrapper(_ref) {
   var value = _ref.value,
@@ -63,7 +69,12 @@ var DisplayWrapper = function DisplayWrapper(_ref) {
           } },
         '-'
       ),
-      _react2.default.createElement(Input, {
+      control ? _react2.default.createElement(Input, {
+        value: displayRule(value, dateFormat),
+        readOnly: true,
+        autoFocus: true,
+        terminalAlign: terminalAlign
+      }) : _react2.default.createElement(SimpleInput, {
         value: displayRule(value, dateFormat),
         readOnly: true,
         autoFocus: true,

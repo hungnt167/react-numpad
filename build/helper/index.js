@@ -69,8 +69,8 @@ var updateCoords = {
   },
   centerLeft: function centerLeft(coords) {
     return {
-      top: coords.bottom + window.pageYOffset - coords.height,
-      right: window.innerWidth - coords.right + window.pageXOffset + coords.width
+      top: coords.top - coords.height,
+      left: coords.left - WIDTH - PADDING - 5
     };
   },
   centerRight: function centerRight(coords, height) {

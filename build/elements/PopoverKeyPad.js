@@ -10,7 +10,7 @@ var _templateObject = _taggedTemplateLiteral(['\n  background: none;\n  cursor: 
     _templateObject2 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  width: ', 'px;\n  ', ' height: ', 'px;\n  background: ', ';\n  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;\n  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 45px, rgba(0, 0, 0, 0.22) 0px 10px 18px;\n  \n  border: 1px solid rgba(0, 0, 0, 0.2);\n  border-radius: 6px;\n'], ['\n  display: flex;\n  flex-direction: column;\n  width: ', 'px;\n  ', ' height: ', 'px;\n  background: ', ';\n  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;\n  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 45px, rgba(0, 0, 0, 0.22) 0px 10px 18px;\n  \n  border: 1px solid rgba(0, 0, 0, 0.2);\n  border-radius: 6px;\n']),
     _templateObject3 = _taggedTemplateLiteral(['width: 100%;'], ['width: 100%;']),
     _templateObject4 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-wrap: wrap;\n  flex-grow: 1;\n  button {\n    border-bottom: 1px solid #ddd;\n    border-right: 1px solid #ddd;\n  }\n  button:nth-child(3n) {\n    border-right: none;\n  }\n  button:nth-child(-n + 3) {\n    border-top: 1px solid #ddd;\n  }\n'], ['\n  display: flex;\n  flex-wrap: wrap;\n  flex-grow: 1;\n  button {\n    border-bottom: 1px solid #ddd;\n    border-right: 1px solid #ddd;\n  }\n  button:nth-child(3n) {\n    border-right: none;\n  }\n  button:nth-child(-n + 3) {\n    border-top: 1px solid #ddd;\n  }\n']),
-    _templateObject5 = _taggedTemplateLiteral(['\n  border-width: ', 'px;\n  position: fixed;\n  z-index: 10000;\n  display: block;\n  width: 0;\n  height: 0;\n  border-color: transparent;\n  border-style: solid;\n  border-right-color: #fff;\n  border-left-width: 0;\n  left: ', ';\n  margin-top: -', 'px;\n  top: ', ';\n'], ['\n  border-width: ', 'px;\n  position: fixed;\n  z-index: 10000;\n  display: block;\n  width: 0;\n  height: 0;\n  border-color: transparent;\n  border-style: solid;\n  border-right-color: #fff;\n  border-left-width: 0;\n  left: ', ';\n  margin-top: -', 'px;\n  top: ', ';\n']);
+    _templateObject5 = _taggedTemplateLiteral(['\n  border-width: ', 'px;\n  position: fixed;\n  z-index: 10000;\n  display: block;\n  width: 0;\n  height: 0;\n  border-color: transparent;\n  border-style: solid;\n  border-right-color: ', ';\n  border-left-width: ', ';\n  border-left-color: ', ';\n  border-right-width: ', ';\n  left: ', ';\n  margin-top: -', 'px;\n  top: ', ';\n'], ['\n  border-width: ', 'px;\n  position: fixed;\n  z-index: 10000;\n  display: block;\n  width: 0;\n  height: 0;\n  border-color: transparent;\n  border-style: solid;\n  border-right-color: ', ';\n  border-left-width: ', ';\n  border-left-color: ', ';\n  border-right-width: ', ';\n  left: ', ';\n  margin-top: -', 'px;\n  top: ', ';\n']);
 
 var _react = require('react');
 
@@ -75,6 +75,29 @@ var Content = _styledComponents2.default.div(_templateObject2, function (props) 
 var Keys = _styledComponents2.default.div(_templateObject4);
 
 var Arrow = _styledComponents2.default.div(_templateObject5, _helper.PADDING, function (props) {
+  if (props.arrow === 'left') {
+    return 'transparent';
+  }
+  return '#fff';
+}, function (props) {
+  if (props.arrow === 'left') {
+    return '11px';
+  }
+  return '0';
+}, function (props) {
+  if (props.arrow === 'left') {
+    return '#fff';
+  }
+  return 'transparent';
+}, function (props) {
+  if (props.arrow === 'left') {
+    return '0';
+  }
+  return '11px';
+}, function (props) {
+  if (props.arrow === 'left') {
+    return props ? props.coords.left - _helper.PADDING - 5 + 'px' : '50%';
+  }
   return props ? props.coords.left + props.coords.width + 'px' : '50%';
 }, _helper.PADDING, function (props) {
   return props ? props.coords.top + props.coords.height / 2 + 'px' : '50%';
@@ -88,10 +111,19 @@ var PopoverKeyPad = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (PopoverKeyPad.__proto__ || Object.getPrototypeOf(PopoverKeyPad)).call(this, props));
 
+    _this.control = function (isIncrement) {
+      _this.setState(function (prevState) {
+        return {
+          input: _this.getDisplayText(_this.getValidValue(prevState.input, isIncrement))
+        };
+      });
+    };
+
     _this.state = { input: props.value };
     _this.isDecimal = props.isDecimal || false;
     _this.step = props.qtyIncrement ? props.qtyIncrement : 1;
     _this.allowKey = _this.isDecimal ? [7, 8, 9, 4, 5, 6, 1, 2, 3, _this.props.decimalSeparator, 0] : [7, 8, 9, 4, 5, 6, 1, 2, 3, '', 0];
+    props.isSimpleMode && (_this.allowKey = [7, 8, 9, 4, 5, 6, 1, 2, 3, '00', 0]); // eslint-disable-line
     _this.handleClick = _this.handleClick.bind(_this);
     _this.keyDown = _this.keyDown.bind(_this);
     _this.cancelLastInsert = _this.cancelLastInsert.bind(_this);
@@ -271,20 +303,9 @@ var PopoverKeyPad = function (_Component) {
       return false;
     }
   }, {
-    key: 'control',
-    value: function control(isIncrement) {
-      var _this3 = this;
-
-      this.setState(function (prevState) {
-        return {
-          input: _this3.getDisplayText(_this3.getValidValue(prevState.input, isIncrement))
-        };
-      });
-    }
-  }, {
     key: 'render',
     value: function render() {
-      var _this4 = this;
+      var _this3 = this;
 
       var _props7 = this.props,
           displayRule = _props7.displayRule,
@@ -293,14 +314,17 @@ var PopoverKeyPad = function (_Component) {
           decimalSeparator = _props7.decimalSeparator,
           terminalAlign = _props7.terminalAlign,
           width = _props7.width,
-          height = _props7.height;
+          height = _props7.height,
+          arrow = _props7.arrow,
+          coords = _props7.coords,
+          isSimpleMode = _props7.isSimpleMode;
 
 
       return _react2.default.createElement(
         Content,
         { width: width, height: height },
         _react2.default.createElement(_PopoverDisplay2.default, {
-          control: this.control.bind(this),
+          control: isSimpleMode ? false : this.control,
           value: this.state.input,
           displayRule: displayRule,
           terminalAlign: terminalAlign
@@ -313,10 +337,10 @@ var PopoverKeyPad = function (_Component) {
               key: 'button-' + key,
               theme: theme,
               click: function click(clickedKey) {
-                return _this4.handleClick(clickedKey);
+                return _this3.handleClick(clickedKey);
               },
               value: key,
-              disabled: !keyValid(_this4.state.input, key, _this4.isDecimal, decimalSeparator)
+              disabled: !keyValid(_this3.state.input, key, _this3.isDecimal, decimalSeparator)
             });
           }),
           _react2.default.createElement(
@@ -325,7 +349,7 @@ var PopoverKeyPad = function (_Component) {
             _react2.default.createElement(_backspace2.default, null)
           )
         ),
-        this.props.arrow && _react2.default.createElement(Arrow, { coords: this.props.coords })
+        arrow && _react2.default.createElement(Arrow, { coords: coords, arrow: arrow })
       );
     }
   }]);
@@ -349,6 +373,7 @@ PopoverKeyPad.propTypes = {
   sync: _propTypes2.default.bool.isRequired,
   decimalSeparator: _propTypes2.default.string,
   isDecimal: _propTypes2.default.bool,
+  isSimpleMode: _propTypes2.default.bool,
   qtyIncrement: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.bool]),
   smartIncrement: _propTypes2.default.bool,
   coords: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.bool]),
@@ -367,6 +392,7 @@ PopoverKeyPad.defaultProps = {
   min: 0,
   decimalSeparator: '.',
   isDecimal: false,
+  isSimpleMode: false,
   qtyIncrement: false,
   smartIncrement: false,
   coords: false,

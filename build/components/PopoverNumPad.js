@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getTransition = undefined;
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -158,22 +160,10 @@ exports.default = function (_ref) {
             placeholder = _props3.placeholder,
             label = _props3.label,
             theme = _props3.theme,
-            locale = _props3.locale,
-            min = _props3.min,
-            max = _props3.max,
             position = _props3.position,
-            sync = _props3.sync,
-            decimalSeparator = _props3.decimalSeparator,
-            isDecimal = _props3.isDecimal,
-            qtyIncrement = _props3.qtyIncrement,
-            smartIncrement = _props3.smartIncrement,
-            arrow = _props3.arrow,
-            terminalAlign = _props3.terminalAlign,
             width = _props3.width,
             height = _props3.height,
-            value = _props3.value,
-            onChangeOverMax = _props3.onChangeOverMax,
-            onChangeOverMin = _props3.onChangeOverMin;
+            value = _props3.value;
 
         var customTheme = (typeof theme === 'undefined' ? 'undefined' : _typeof(theme)) === 'object' ? theme : (0, _styles2.default)(theme);
         customTheme.position = position;
@@ -215,32 +205,17 @@ exports.default = function (_ref) {
               _react2.default.createElement(
                 _elements.Wrapper,
                 { show: true, width: width, height: height },
-                _react2.default.createElement(element, {
+                _react2.default.createElement(element, _extends({}, this.props, {
                   cancel: this.toggleKeyPad,
                   confirm: this.confirm,
                   update: this.update,
                   eventTypes: ['click', 'touchend'],
+                  value: '' + value,
+                  coords: coords,
                   displayRule: displayRule,
                   validation: validation,
-                  keyValid: keyValid,
-                  label: label,
-                  locale: locale,
-                  min: min,
-                  max: max,
-                  value: '' + value,
-                  sync: sync,
-                  decimalSeparator: decimalSeparator,
-                  isDecimal: isDecimal,
-                  qtyIncrement: qtyIncrement,
-                  smartIncrement: smartIncrement,
-                  coords: coords,
-                  arrow: arrow,
-                  terminalAlign: terminalAlign,
-                  width: width,
-                  height: height,
-                  onChangeOverMax: onChangeOverMax,
-                  onChangeOverMin: onChangeOverMin
-                }, null)
+                  keyValid: keyValid
+                }), null)
               )
             ))
           )
@@ -264,6 +239,7 @@ exports.default = function (_ref) {
     sync: false,
     decimalSeparator: '.',
     isDecimal: false,
+    isSimpleMode: false,
     qtyIncrement: false,
     smartIncrement: false,
     arrow: false,
@@ -275,14 +251,13 @@ exports.default = function (_ref) {
     onChangeOverMax: function onChangeOverMax() {},
     onChangeOverMin: function onChangeOverMin() {}
   };
-
   PopoverNumPad.propTypes = {
     onChange: _propTypes2.default.func.isRequired,
     children: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.arrayOf(_propTypes2.default.element)]),
     placeholder: _propTypes2.default.string,
     position: _propTypes2.default.string,
-    label: _propTypes2.default.string,
-    locale: _propTypes2.default.string,
+    label: _propTypes2.default.string /* eslint-disable */
+    , locale: _propTypes2.default.string,
     theme: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]),
     value: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
     min: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.bool]),
@@ -290,6 +265,7 @@ exports.default = function (_ref) {
     sync: _propTypes2.default.bool,
     decimalSeparator: _propTypes2.default.string,
     isDecimal: _propTypes2.default.bool,
+    isSimpleMode: _propTypes2.default.bool,
     qtyIncrement: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.bool]),
     smartIncrement: _propTypes2.default.bool,
     arrow: _propTypes2.default.oneOf(['left', 'right', false]),
@@ -299,7 +275,7 @@ exports.default = function (_ref) {
     minTop: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.bool]),
     maxBottom: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.bool]),
     onChangeOverMax: _propTypes2.default.func,
-    onChangeOverMin: _propTypes2.default.func
+    onChangeOverMin: _propTypes2.default.func /* eslint-enable */
   };
 
   return PopoverNumPad;
